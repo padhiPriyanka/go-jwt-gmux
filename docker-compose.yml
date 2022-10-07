@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB : "my_DB"
+    ports:
+      - "5432:5432"
+    #    volumes:
+    #      - pg_data:/var/lib/postgres/data
+    restart: always

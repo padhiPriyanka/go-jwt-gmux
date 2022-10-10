@@ -39,3 +39,15 @@ type AuthUser struct {
 	Email      string
 	Role       AccessRole
 }
+
+// ChangePassword updates user's password related fields
+func (u *User) ChangePassword(hash string) {
+	u.Password = hash
+	u.LastPasswordChange = time.Now()
+}
+
+// UpdateLastLogin updates last login field
+func (u *User) UpdateLastLogin(token string) {
+	u.Token = token
+	u.LastLogin = time.Now()
+}
